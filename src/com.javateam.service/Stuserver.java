@@ -1,8 +1,9 @@
 package com.javateam.service;
 
-import com.yly.Dao.StuDao;
-import com.yly.po.Score;
-import com.yly.po.Students;
+
+import com.javateam.dao.StuDao;
+import com.javateam.po.Score;
+import com.javateam.po.Students;
 
 import java.util.List;
 

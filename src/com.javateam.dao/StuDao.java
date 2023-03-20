@@ -1,8 +1,8 @@
 package com.javateam.dao;
 
-import com.yly.po.Score;
-import com.yly.po.Students;
-import com.yly.util.DBConnection;
+import com.javateam.po.Score;
+import com.javateam.po.Students;
+import com.javateam.util.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
