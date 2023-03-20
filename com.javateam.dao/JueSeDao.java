@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.javateam.po.JueSe;
-import com.javateam.po.Student;
+
 import com.javateam.util.DBConnection;
 
 public class JueSeDao {
@@ -40,90 +40,10 @@ public class JueSeDao {
 	}
 
 	// 新增
-	public int addStu(Student stu) {
-		Connection conn = null;
-		PreparedStatement ps = null;
-		int i = 0;
-		String sql = "insert into student values(null,?,?,?,?,?,?)";
 
-		try {
-			conn = DBConnection.getConnection();
-			ps = conn.prepareCall(sql);
-			ps.setString(1, stu.getSname());
-			ps.setString(2, stu.getSex());
-			ps.setString(3, stu.getBirthday());
-			ps.setString(4, stu.getPhone());
-			ps.setString(5, stu.getAddress());
-			ps.setString(6, stu.getState());
-			i = ps.executeUpdate();
 
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			DBConnection.closeAll(conn, ps, null);
-		}
-		return i;
-	}
 
-	// 修改
-	public int update(Student stu) {
-		Connection conn = null;
-		PreparedStatement ps = null;
 
-		String sql = "update student set sname=?,sex=?,birthday=?,phone=?,address=?,state=? where sid=?";
-		int i = 0;
-		try {
-			conn = DBConnection.getConnection();
-			ps = conn.prepareCall(sql);
-			ps.setString(1, stu.getSname());
-			ps.setString(2, stu.getSex());
-			ps.setString(3, stu.getBirthday());
-			ps.setString(4, stu.getPhone());
-			ps.setString(5, stu.getAddress());
-			ps.setString(6, stu.getState());
-			ps.setInt(7, stu.getSid());
-			i = ps.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			DBConnection.closeAll(conn, ps, null);
-		}
-		return i;
-	}//
-
-	public int updateOne2(Student stu, int c, String str,String str1) {
-		Connection conn = null;
-		PreparedStatement ps = null;
-
-		String sql = "update student set sname=?,sex=?,birthday=?,phone=?,address=?,state=? where sid=?";
-		String sql1 = "update student set " + str + "=? where sid=?";
-		int i = 0;
-		try {
-			conn = DBConnection.getConnection();
-			ps = c == 1 ? conn.prepareCall(sql) : conn.prepareCall(sql1);
-			if (c == 1) {
-				ps.setString(1, stu.getSname());
-				ps.setString(2, stu.getSex());
-				ps.setString(3, stu.getBirthday());
-				ps.setString(4, stu.getPhone());
-				ps.setString(5, stu.getAddress());
-				ps.setString(6, stu.getState());
-				ps.setInt(7, stu.getSid());			
-			} else {
-				ps.setString(1, str1);
-				ps.setInt(2, stu.getSid());					
-			}
-			i = ps.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			DBConnection.closeAll(conn, ps, null);
-		}
-		return i;
-	}
 
 	//
 	public int updateOne(int sid, String str, String str1) {
