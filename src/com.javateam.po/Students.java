@@ -1,4 +1,4 @@
-package com.yly.po;
+package com.javateam.po;
 
 public class Students {
     private int sid;

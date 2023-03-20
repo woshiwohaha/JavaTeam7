@@ -1,4 +1,4 @@
-package com.yly.Dao;
+package com.javateam.dao;
 
 import com.yly.po.Score;
 import com.yly.po.Students;

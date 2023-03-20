@@ -1,4 +1,4 @@
-package com.yly.server;
+package com.javateam.service;
 
 import com.yly.Dao.StuDao;
 import com.yly.po.Score;
