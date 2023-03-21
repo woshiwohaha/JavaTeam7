@@ -1,5 +1,3 @@
-package com.sc;
-
 import com.javateam.po.User;
 import com.javateam.service.LoginService;
 import com.javateam.util.InPutUtil;
