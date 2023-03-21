@@ -43,7 +43,7 @@ public class UserDao {
         Connection conn=null;
         PreparedStatement ps=null;
         try {
-            String sql="insert into student values(null,?,?,?)";
+            String sql="insert into tb_user values(null,?,?,?)";
             conn=DBConnection.getConnection();
             ps=conn.prepareStatement(sql);
             ps.setString(1, u.getUname());
