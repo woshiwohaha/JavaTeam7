@@ -13,13 +13,10 @@ public class QuanXianPD{
 		str = QuanXianDao.query(shenfenid);
 		int c=0;
 		String i2=suoxvquanxian+"";
-		System.out.println("权限集合");
-		String[] strlist = str.split(",");
+		String[] strlist = str.split(",");//
 		for(String s : strlist){
-			System.out.println(s);
 			if(s.equals(i2)) {c++;}
 		}
-		System.out.println(c);
 		boolean a= c>0? true : false;
 		if (a) {
 			
